@@ -1,10 +1,10 @@
 # Meraki Companion changelog
 
-This history covers the Android app and the separate Mac setup package. Earlier entries are reconstructed milestones from archived release notes, test records, and source snapshots. Versions described as beta, owner test, or developer preview retain those statuses.
+This history covers the Android app and the separate Mac setup package. Earlier entries are reconstructed milestones from archived release notes, test records, and source snapshots. Dates identify recorded development milestones, archived builds, or owner tests. Entries without a confirmed date are left undated.
 
 ## Android app
 
-### 0.4.60 — Recipe Sync Developer Preview
+### 0.4.60 — Recipe Sync Developer Preview (2026-11-20 build)
 
 - Extended MerakiThing journal sync to exchange recipe library changes. Companion accepts the local address from the MerakiThing pairing QR and preserves the selected recipe when it is updated by sync.
 - Prepared a Secure Link-only source snapshot. Removed bundled owner addresses, recordings, legacy recorder material, and the bundled Visualizer OAuth registration. Visualizer JSON export works with the default configuration. Direct sign-in and upload require a developer's registered client ID.
@@ -15,28 +15,28 @@ This history covers the Android app and the separate Mac setup package. Earlier 
 - **Recipe and return sync.** The owner confirmed a recipe-library change reached MerakiThing and a shot edit made on MerakiThing synced back to Companion.
 - **QR re-pairing.** The owner confirmed the **Pair again** QR flow on the Pixel and MerakiThing. A recipe edited in Companion synced successfully afterward.
 
-### 0.4.59 — MerakiThing journal sync
+### 0.4.59 — MerakiThing journal sync (2026-11-20 build)
 
 - Added Companion-initiated shot journal sync with MerakiThing over a paired local connection. The journal exchange includes shot data and supported tasting metadata.
 - **Verification.** The owner confirmed a sync between a Pixel and MerakiThing 0.16.0 on the Pi. Repeat sync and a return edit on those devices remained separate checks.
 
-### 0.4.58 — Brand corrections
+### 0.4.58 — Brand corrections (November 2026)
 
 - Added brand assignment for a single shot, selected shots, or an entire month. Whole-month assignment defaults to unassigned entries, with confirmation required to replace an existing label.
 - Corrections can include linked and standalone measured grinds. The recorded dates and weights, bag observations, and lifetime counts are preserved.
 - Brand corrections survive restart, backfill, and backup restoration and can be included with new shot exports.
 - **Verification.** Host checks covered assignment, usage, and export. Emulator checks covered assigning a whole month, selected shots, and one shot while preserving measured totals.
 
-### 0.4.57 — Graphite
+### 0.4.57 — Graphite (November 2026)
 
 - Updated the app palette to graphite, charcoal, soft white, sage, and peach. The recipe's product photo and machine Home appearance remain user-selectable.
 
-### 0.4.56 — Beanconqueror name matching
+### 0.4.56 — Beanconqueror name matching (November 2026)
 
 - Added editable bean, grinder, and preparation-method names to the transfer review. Companion remembers the exact names for later transfers so Beanconqueror can match existing entries.
 - **Verification.** The owner confirmed a complete-shot import reused an existing bean and grinder. Host checks and a decoder/importer simulation also passed. Beanconqueror's custom graph scaling and native flow summary remained limitations.
 
-### 0.4.55 — Direct Beanconqueror transfer
+### 0.4.55 — Direct Beanconqueror transfer (November 2026)
 
 - Added a dedicated shot-detail action for sending a complete shot to Beanconqueror 8.8.2. The transfer includes the sampled weight curve, calculated cup flow, brew settings, and optional tasting notes.
 - Added a transfer review and a warning before sending the same shot again.
@@ -55,7 +55,7 @@ This history covers the Android app and the separate Mac setup package. Earlier 
 
 - Added a **Last 10 shots** JSON export alongside the full journal backup.
 
-### 0.4.50–0.4.51 — Record animations and layout
+### 0.4.50–0.4.51 — Record animations and layout (2026-11-08)
 
 - Added optional dosing cup, brew cup, and steam animations under Record settings. They start disabled and follow the activity shown on the Record screen.
 - Refined the Record layout around the live scale, timer, progress, and weight and cup-flow graphs.
@@ -63,15 +63,16 @@ This history covers the Android app and the separate Mac setup package. Earlier 
 
 ### 0.4.47–0.4.49 — Live Record screen
 
+- **2026-11-06.** The 0.4.47 Live Record build was delivered for owner testing.
 - Introduced a compact live view with scale weight, brew timer, progress, calculated cup flow, recipe targets, and clearly marked offline and stale-data states. Compatible favourite shots and a recipe's time window can appear on the chart.
 - Put recipe application and one-shot adjustments within reach of Record. The app checks for fresh machine data and idle state before applying settings.
 - **Verification.** The 0.4.47 build passed presentation, recording, and export regressions. Both orientations were exercised with synthetic UI data.
 
-### 0.4.46 — Recipe and bag tracking
+### 0.4.46 — Recipe and bag tracking (2026-11-05)
 
 - Added shared bag tracking to recipes and attached bag context to saved shots. Recipe backups include bag information and referenced product photos.
 
-### 0.4.45 — Automatic tare handling
+### 0.4.45 — Automatic tare handling (2026-11-05)
 
 - Improved brew-start handling around automatic scale tare. The recorder waits for the scale to settle before using readings for the shot curve.
 - **Verification.** Regression cases covered tare starts, connecting mid-brew, recovery for subsequent shots, and timing in graphs and exports.
@@ -93,7 +94,7 @@ This history covers the Android app and the separate Mac setup package. Earlier 
 - Focused the sharing screen on Visualizer, with browser sign-in, manual confirmation, optional tasting notes, receipt reuse, and Visualizer JSON export.
 - **Verification.** Build, emulator, export, sign-in, receipt, and uncertain-upload checks passed.
 
-### 0.4.18 — Usage coverage
+### 0.4.18 — Usage coverage (2026-10-29)
 
 - Split shot and measured-grind coverage so each count has its own start date. Coffee-ground weight uses measured grinder records.
 
@@ -105,8 +106,8 @@ This history covers the Android app and the separate Mac setup package. Earlier 
 
 ## Mac setup package
 
-### 0.5.0 — Owner Test
+### 0.5.0 — Owner Test (2026-11-05 hardware test)
 
 - Added a single Mac setup window for staged machine-side installation, private backup verification, activation confirmation, pairing, and post-restart checks.
 - Bundled Android 0.4.41 in this historical owner-test package. The setup and Android version numbers track separate products.
-- **Verification.** Installer, removal, backup, and recovery paths were exercised in simulation. Live acceptance of the new 0.5.0 automation remained pending. Earlier 0.4.0 live pairing was confirmed.
+- **Verification.** Installer, removal, backup, and recovery paths were exercised in simulation. The November 5 owner test verified backup, rollback, and reactivation on an existing install. Fresh installation testing remained pending. Earlier 0.4.0 live pairing was confirmed.

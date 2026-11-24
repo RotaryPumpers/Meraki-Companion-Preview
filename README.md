@@ -31,6 +31,7 @@
 - [More screenshots](#more-screenshots)
 - [Machine setup and recovery](#machine-setup-and-recovery)
 - [Troubleshooting](#troubleshooting)
+- [Related development](#related-development)
 - [Development and feedback](#development-and-feedback)
 - [License](#license)
 
@@ -85,6 +86,16 @@ Open an eligible complete shot from **Shots** and choose a destination in the sh
 
 See the [Visualizer](docs/FEATURES.md#visualizer) and [Beanconqueror](docs/FEATURES.md#beanconqueror) sections for the data each transfer includes.
 
+<p align="center">
+  <a href="docs/screenshots/shot-details.webp"><img src="docs/screenshots/shot-details.webp" height="380" alt="Companion shot details with recorded measurements, weight curve, and sharing buttons"></a>
+  <a href="docs/screenshots/visualizer-shot.webp"><img src="docs/screenshots/visualizer-shot.webp" height="380" alt="Visualizer showing the shared shot settings and weight-flow chart"></a>
+  <a href="docs/screenshots/beanconqueror-shot-graph.webp"><img src="docs/screenshots/beanconqueror-shot-graph.webp" height="380" alt="Beanconqueror showing the imported brew graph"></a>
+</p>
+
+<p align="center"><sub>Companion shot details · Visualizer shot page · Beanconqueror brew graph</sub></p>
+
+See the [Beanconqueror overview](docs/screenshots/beanconqueror-overview.webp) and [imported brew settings](docs/screenshots/beanconqueror-brew-settings.webp) for the same example.
+
 ## More screenshots
 
 <p align="center">
@@ -110,6 +121,11 @@ The Mac Self Service Installer 0.5.0 is a separate owner-test package. Fresh mac
 **I want to try the app without pairing.** The recipe library and local journal work offline. Import a compatible shot file to try the detail graphs and replay.
 
 **I can export for Visualizer, but direct sign-in is unavailable.** Export is available by default. Direct sign-in uses a developer’s own registered client ID. See the [Android build notes](android/README.md#build).
+
+## Related development
+
+- **Home Assistant:** A separate dashboard prototype is in development for live recording, exploring saved shots, and comparing weight curves. It can import compatible Companion recipe backups. The prototype reads machine data and runs separately from this Android preview.
+- **MerakiThing:** Companion can optionally sync shots and recipes over a paired local connection. Development of the separate MerakiThing project continues. See the [sync details](docs/FEATURES.md#merakithing-shot-and-recipe-sync).
 
 ## Development and feedback
 
