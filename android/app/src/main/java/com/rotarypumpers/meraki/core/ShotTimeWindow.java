@@ -1,0 +1,6 @@
+package com.rotarypumpers.meraki.core;
+import org.json.*;
+public final class ShotTimeWindow{
+ public static boolean enabled(JSONObject recipe){return recipe!=null&&(recipe.has("shot_time_window")?recipe.optBoolean("shot_time_window"):recipe.has("time_s")&&recipe.optDouble("time_max_s",0)>recipe.optDouble("time_s",0));}
+ public static String result(JSONObject shot){JSONObject r=shot.optJSONObject("recipe");if(!enabled(r))return "";double lo=r.optDouble("time_s"),hi=r.optDouble("time_max_s");if(!Double.isFinite(lo)||!Double.isFinite(hi)||lo<=0||hi<=lo)return "Time window · unavailable";double value=shot.optDouble("duration_estimate_s",Double.NaN);if(!shot.optBoolean("finished",shot.optBoolean("complete"))||!Double.isFinite(value))return "Time window · incomplete";if(!shot.optBoolean("complete")||"gapped".equals(shot.optString("capture_quality")))return "Time window · uncertain";JSONArray b=shot.optJSONArray("duration_bounds_s");if(b!=null){double a=b.optDouble(0,Double.NaN),z=b.optDouble(1,Double.NaN);if(b.length()!=2||!Double.isFinite(a)||!Double.isFinite(z)||a<0||z<a)return "Time window · uncertain";if((a<lo&&z>=lo)||(a<=hi&&z>hi))return "Near window edge · timing uncertain";}return value<lo?"Under window":value>hi?"Over window":"In window";}
+}

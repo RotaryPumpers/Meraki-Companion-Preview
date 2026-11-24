@@ -1,0 +1,19 @@
+plugins { id 'com.android.application' }
+
+def visualizerClientId = providers.environmentVariable('COMPANION_VISUALIZER_CLIENT_ID').getOrElse('')
+if (visualizerClientId && !(visualizerClientId ==~ /[A-Za-z0-9_-]{8,256}/)) {
+    throw new GradleException('COMPANION_VISUALIZER_CLIENT_ID must be a valid Visualizer OAuth client ID')
+}
+
+android {
+    buildFeatures { buildConfig true }
+    namespace 'com.rotarypumpers.meraki'
+    compileSdk 35
+    defaultConfig { applicationId 'com.rotarypumpers.meraki'; minSdk 26; targetSdk 35; versionCode 86; versionName '0.4.60-recipe-sync' }
+    defaultConfig {
+        buildConfigField 'String', 'VISUALIZER_CLIENT_ID', '"' + visualizerClientId + '"'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}
+
+dependencies { implementation "com.journeyapps:zxing-android-embedded:4.3.0" }

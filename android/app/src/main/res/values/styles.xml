@@ -1,0 +1,22 @@
+<resources>
+    <style name="AppTheme" parent="CompanionAppThemeBase"/>
+    <style name="CompanionAppThemeBase" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">@font/space_grotesk</item>
+        <item name="android:colorAccent">#A9C397</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">#414642</item>
+        <item name="android:statusBarColor">#414642</item>
+    </style>
+    <style name="CompanionLightDialog" parent="android:style/Theme.Material.Light.Dialog.Alert">
+        <item name="android:fontFamily">@font/space_grotesk</item>
+        <item name="android:textAppearanceLarge">@style/PopupTitle</item>
+        <item name="android:colorAccent">#35542D</item>
+        <item name="android:colorBackground">#FAFAF7</item>
+        <item name="android:textColorPrimary">#20261E</item>
+        <item name="android:textColorSecondary">#586052</item>
+        <item name="android:windowBackground">@drawable/light_dialog_surface</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+<style name="PopupTitle" parent="android:style/TextAppearance.Material.Title"><item name="android:textSize">18sp</item><item name="android:textColor">#20261E</item></style>
+</resources>

@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" tools:replace="android:required" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" tools:replace="android:required" />
+  <queries><package android:name="com.beanconqueror.app" /></queries>
+  <application android:label="Meraki Companion" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher" android:theme="@style/AppTheme" android:allowBackup="false" android:usesCleartextTraffic="false">
+    <activity android:name="com.journeyapps.barcodescanner.CaptureActivity" tools:node="remove" />
+    <activity android:name=".PairingScanActivity" android:exported="false" />
+    <activity android:name=".MainActivity" android:launchMode="singleTop" android:exported="true">
+      <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="com.rotarypumpers.meraki" android:path="/visualizer/oauth" />
+      </intent-filter>
+    </activity>
+  </application>
+</manifest>

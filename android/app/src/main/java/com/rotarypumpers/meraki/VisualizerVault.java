@@ -1,0 +1,10 @@
+package com.rotarypumpers.meraki;
+import android.content.*;import android.security.keystore.*;import javax.crypto.*;import javax.crypto.spec.GCMParameterSpec;import java.security.KeyStore;import java.util.Base64;import java.nio.charset.StandardCharsets;import org.json.*;
+/** Separate account vault, never machine pairing or journal backup. */
+final class VisualizerVault {
+ private final android.content.SharedPreferences p;private static final String ALIAS="rp_visualizer_oauth_v1";
+ VisualizerVault(Context c){p=c.getSharedPreferences("visualizer_oauth",Context.MODE_PRIVATE);}
+ private SecretKey key()throws Exception{KeyStore k=KeyStore.getInstance("AndroidKeyStore");k.load(null);if(!k.containsAlias(ALIAS)){KeyGenerator g=KeyGenerator.getInstance("AES","AndroidKeyStore");g.init(new KeyGenParameterSpec.Builder(ALIAS,KeyProperties.PURPOSE_ENCRYPT|KeyProperties.PURPOSE_DECRYPT).setBlockModes(KeyProperties.BLOCK_MODE_GCM).setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE).build());g.generateKey();}return (SecretKey)k.getKey(ALIAS,null);}
+ synchronized JSONObject read(String slot)throws Exception{String data=p.getString(slot,null);if(data==null)return null;JSONObject o=new JSONObject(data);Cipher c=Cipher.getInstance("AES/GCM/NoPadding");c.init(Cipher.DECRYPT_MODE,key(),new GCMParameterSpec(128,Base64.getDecoder().decode(o.getString("iv"))));return new JSONObject(new String(c.doFinal(Base64.getDecoder().decode(o.getString("data"))),StandardCharsets.UTF_8));}
+ synchronized void save(String slot,JSONObject value)throws Exception{if(value==null){if(!p.edit().remove(slot).commit())throw new java.io.IOException("Could not clear Visualizer sign-in");return;}Cipher c=Cipher.getInstance("AES/GCM/NoPadding");c.init(Cipher.ENCRYPT_MODE,key());String data=new JSONObject().put("iv",Base64.getEncoder().encodeToString(c.getIV())).put("data",Base64.getEncoder().encodeToString(c.doFinal(value.toString().getBytes(StandardCharsets.UTF_8)))).toString();if(!p.edit().putString(slot,data).commit())throw new java.io.IOException("Could not save Visualizer sign-in");}
+}
