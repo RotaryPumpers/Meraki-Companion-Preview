@@ -34,6 +34,7 @@
 - [Related development](#related-development)
 - [Development and feedback](#development-and-feedback)
 - [License](#license)
+- [Disclaimer](#disclaimer)
 
 ## Features
 
@@ -62,7 +63,7 @@ See the [full feature reference](docs/FEATURES.md) for details, optional integra
 2. Open **Recipes** to create your first recipe. If you already have compatible shot or journal JSON, open **Journal & app tools** to import it and try the graphs and replay.
 3. If your machine already has a compatible Secure Link setup, open **Machine connection** and scan its pairing QR code. Then open **Record** and pull a shot.
 
-The preview is distributed as Android source. Back up your journal before replacing an existing installation with a developer build.
+The preview is distributed as Android source. Back up your journal before replacing an existing installation. See the [signing and installation notes](android/README.md#build) if you already have Companion on your phone.
 
 ## Using Companion
 
@@ -136,3 +137,13 @@ For a GitHub issue, include the Companion version, Android version, and what you
 ## License
 
 Companion’s original source is licensed under the [Mozilla Public License 2.0](LICENSE). Third-party dependencies and fonts retain their own terms.
+
+## Disclaimer
+
+Meraki Companion is an independent community project by Rotary Pumpers. It is unaffiliated with MerakiTech, and MerakiTech does not endorse or support it. Product names identify compatible equipment and services.
+
+**This is a source-only Android Developer Preview.** The repository provides Android source and build instructions. Live recording requires an existing compatible Secure Link installation. The Mac machine installer, clean removal, and legacy cleanup are outside this preview. See [Machine setup and recovery](#machine-setup-and-recovery) for the current status.
+
+Companion can apply supported recipe settings when paired with a compatible machine service. Use it with a machine you own or administer, and check its settings before brewing. Back up your journal before changing app builds, and keep machine pairing credentials private.
+
+The software is provided as-is under the [license](LICENSE). Hardware, firmware, and Android combinations outside the [documented tests](android/README.md#review-status) may behave differently.

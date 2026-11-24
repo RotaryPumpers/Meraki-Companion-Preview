@@ -10,7 +10,7 @@ This tree comes from Companion 0.4.60 Recipe Sync. The Journal & app tools menu 
 2. Install Android SDK Platform 35. Use a JDK 25 Gradle runtime, as specified in `gradle/gradle-daemon-jvm.properties`.
 3. Sync the project and build the debug variant. From a terminal in this folder, the equivalent command is `./gradlew :app:assembleDebug` on Mac/Linux or `gradlew.bat :app:assembleDebug` on Windows.
 
-The debug build is for development and emulator testing. Keep any existing journal backed up before replacing an installed Companion build.
+The debug build is for development and emulator testing. Android accepts an in-place update only if the signing identity matches and the version code is at least as high as the installed build. A debug APK you build with your own key can have a different signing identity from an existing Companion APK. Use an emulator or a spare device for a first test, and make a journal backup before replacing a working installation. See [Android's app update requirements](https://developer.android.com/google/play/app-updates#how-android-handles-app-updates).
 
 Visualizer sign-in is optional. To enable it in a developer build, set the `COMPANION_VISUALIZER_CLIENT_ID` environment variable to your own registered Visualizer OAuth client ID before starting Gradle. Visualizer JSON export remains available with the default build.
 
@@ -41,4 +41,4 @@ The owner confirmed the **Pair again** QR flow on the Pixel and MerakiThing, the
 
 The legacy shell recorder, its machine-side executable, and private test captures are excluded. This preview uses Secure Link for machine connections. See `Third-Party-Notices/` and the font notices in `app/src/main/assets/`.
 
-See the [repository license notice](../README.md#source-license) for source coverage and the reviewed animation set.
+See the [repository license](../README.md#license) and [preview disclaimer](../README.md#disclaimer).
