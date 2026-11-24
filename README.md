@@ -130,6 +130,8 @@ The Mac Self Service Installer 0.5.0 is a separate owner-test package. Fresh mac
 
 ## Development and feedback
 
+Companion is maintained by Rotary Pumpers with development and testing assistance from [OpenAI Codex](https://github.com/codex).
+
 Start with the [Android build and test notes](android/README.md) and the [changelog](CHANGELOG.md). The owner-tested Pixel build preserved the existing journal, recipes, bags, and measured grind totals during an update, and recorded a new espresso shot. The test notes include emulator checks and optional integration results.
 
 For a GitHub issue, include the Companion version, Android version, and what you expected to happen. For a live-connection issue, include the machine model and firmware versions if known. Keep pairing credentials and private journal data out of reports.
