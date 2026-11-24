@@ -29,6 +29,8 @@ java -cp "$classes:$JSON_JAR" com.rotarypumpers.meraki.ThingJournalChecks
 
 ## Review status
 
+**2026-11-24 clean-install check.** The reviewed 0.4.60 Android source assembled successfully. Android’s signing tool verified the debug APK. The exact APK was then checksum-verified, installed, and launched on a fresh Android 15 (API 35) emulator. The Record, Shots, and Recipes tabs were visible after launch.
+
 The original 0.4.60 archive supplied the sync changes. This review carries forward the Secure Link-only cleanup and accepts the private IPv4 address supplied by the MerakiThing pairing QR. The earlier 0.4.60 review assembled the debug APK, verified its signature, and passed 61 Companion host checks. The MerakiThing 0.20.0 recipe merge passed offline checks for both edit directions and repeat sync.
 
 The standard 0.4.60 debug app (version code 86) installed and launched on the API 37 emulator. Journal import through the Android file picker, the Short events filter, and shot playback passed with synthetic data. The Secure Link pairing form and MerakiThing scanner opened. The virtual camera did not decode the test QR, so the emulator used a synthetic pairing record for the transport test. Companion and the local MerakiThing 0.20.0 journal service exchanged shots and recipes in both directions over pinned TLS. A second sync returned the same records without duplicates.
