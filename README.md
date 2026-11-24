@@ -140,10 +140,16 @@ Companion’s original source is licensed under the [Mozilla Public License 2.0]
 
 ## Disclaimer
 
-Meraki Companion is an independent community project by Rotary Pumpers. It is unaffiliated with MerakiTech, and MerakiTech does not endorse or support it. Product names identify compatible equipment and services.
+> [!WARNING]
+> **Read this before connecting Companion to an espresso machine.** Companion is experimental community software. It can apply supported recipe settings when connected to a compatible machine service. Keep the machine’s own controls available and check its settings before brewing.
 
-**This is a source-only Android Developer Preview.** The repository provides Android source and build instructions. Live recording requires an existing compatible Secure Link installation. The Mac machine installer, clean removal, and legacy cleanup are outside this preview. See [Machine setup and recovery](#machine-setup-and-recovery) for the current status.
-
-Companion can apply supported recipe settings when paired with a compatible machine service. Use it with a machine you own or administer, and check its settings before brewing. Back up your journal before changing app builds, and keep machine pairing credentials private.
-
-The software is provided as-is under the [license](LICENSE). Hardware, firmware, and Android combinations outside the [documented tests](android/README.md#review-status) may behave differently.
+- **Know what this preview includes.** This is an Android source release with build instructions. The shot journal and recipe library can be used offline. Live recording requires an existing compatible Secure Link installation. The Mac machine installer remains an owner-test package. See [Machine setup and recovery](#machine-setup-and-recovery) for the status of fresh setup and cleanup.
+- **Know what changes on the machine.** Companion’s optional machine integration adds a background service and makes a reversible startup change. It preserves the original Meraki display executable and MCU firmware. Applying a recipe can change supported settings on a paired machine. Verify the settings on the machine before using them.
+- **Respect heat, pressure, and electrical hazards.** Follow the manufacturer’s operating and service instructions. Keep the enclosure closed during ordinary setup and use. If a fault requires internal access, stop and contact a qualified technician.
+- **Prepare for data loss or recovery.** Export the journal and recipes you want to keep before changing builds. Keep any machine recovery backup private and available before attempting machine-side changes. Incompatible software, interrupted updates, or storage failure can leave a setup unusable. Recovery and data preservation are not guaranteed.
+- **Understand the readings.** Shot timing, dose, and yield depend on the readings received. Cup flow is calculated from scale weight. Nominal pressure and pre-infusion settings are not measured pressure curves. Use the graphs as brewing aids and use the manufacturer’s procedures for safety checks.
+- **Protect pairing and network access.** Pair only with equipment you own or administer. Use a trusted local network and keep pairing QR codes, keys, and backups private. Keep machine services off the public internet. Review what you share with third-party services, including any tasting notes.
+- **Check compatibility after an update.** Android builds, machine firmware, and machine-side services can change independently. Check the [documented test combinations](android/README.md#review-status) and verify basic operation before relying on live recording or recipe application after an update.
+- **Check your warranty and service terms.** Ask the seller or manufacturer how third-party software may affect service for your machine. Describe your setup accurately if you request service. Rights protected by applicable law remain in effect.
+- **Independent project and third-party rights.** Rotary Pumpers develops Companion independently of MerakiTech. Product names identify equipment and integrations. The release does not distribute manufacturer firmware. Third-party components retain their own licenses. Follow applicable laws and license terms.
+- **Warranty, liability, and support.** The software is provided as is under the [Mozilla Public License 2.0](LICENSE). See sections 6 and 7 for the warranty disclaimer and liability limits. Individual support, future compatibility, and recovery are not guaranteed.
