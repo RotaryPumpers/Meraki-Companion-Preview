@@ -13,12 +13,22 @@
 
 **Meraki Companion** is an independent Android app for Meraki espresso owners. Follow an extraction as it happens, replay and compare your shots, and keep the recipe and tasting notes together so you can dial in your next cup.
 
+<p align="center">
+  <a href="docs/screenshots/record-offline.webp"><img src="docs/screenshots/record-offline.webp" width="219" alt="Companion Record screen with a saved favourite curve and the current recipe"></a>
+  <a href="docs/screenshots/shots-journal.webp"><img src="docs/screenshots/shots-journal.webp" width="219" alt="Companion shot journal with recent shots and recorded usage totals"></a>
+  <a href="docs/screenshots/recipes.webp"><img src="docs/screenshots/recipes.webp" width="219" alt="Companion Recipes screen with the selected recipe and saved brew settings"></a>
+</p>
+
+<p align="center"><sub>Record · Shot journal · Recipe library</sub></p>
+
 ## Contents
 
 - [Features](#features)
 - [Requirements](#requirements)
 - [Quick start](#quick-start)
 - [Using Companion](#using-companion)
+- [Visualizer and Beanconqueror](#visualizer-and-beanconqueror)
+- [More screenshots](#more-screenshots)
 - [Machine setup and recovery](#machine-setup-and-recovery)
 - [Troubleshooting](#troubleshooting)
 - [Development and feedback](#development-and-feedback)
@@ -32,7 +42,7 @@
 | **Shot journal** | Review graphs and tasting notes, mark favourites, replay an extraction, and compare recent shots. |
 | **Recipes** | Save dose, yield, brew temperature, grind setting, and a target time window. Apply supported settings with an existing compatible machine setup. |
 | **Beans and usage** | Track bean bags, roast and opening dates, brand assignments, and measured grind totals. |
-| **Backups and sharing** | Import and export journal data, save backups, and send compatible shots to other tools. |
+| **Backups and sharing** | Back up or import your journal, export shots for Visualizer, and send compatible shots to Beanconqueror. |
 
 See the [full feature reference](docs/FEATURES.md) for details, optional integrations, and limits.
 
@@ -63,6 +73,29 @@ The preview is distributed as Android source. Back up your journal before replac
 | Save a recipe for tomorrow | **Recipes** → create or edit a recipe |
 | Export or import a journal | **⋯** → **Journal & app tools** |
 | Pair or update the machine connection | **⋯** → **Machine connection** |
+
+## Visualizer and Beanconqueror
+
+Open an eligible complete shot from **Shots** and choose a destination in the shot detail view.
+
+| Destination | What you can do |
+| --- | --- |
+| **Visualizer** | Save a Visualizer JSON file with the recorded graph and available shot settings. Direct upload is available in developer builds configured with a [registered Visualizer client ID](android/README.md#build). You review and confirm the upload in Companion. |
+| **Beanconqueror** | Send the shot directly to the Beanconqueror Android app (8.8.2 or later). Review the transfer and match the bean, grinder, and preparation method before sending. |
+
+See the [Visualizer](docs/FEATURES.md#visualizer) and [Beanconqueror](docs/FEATURES.md#beanconqueror) sections for the data each transfer includes.
+
+## More screenshots
+
+<p align="center">
+  <a href="docs/screenshots/recorded-totals.webp"><img src="docs/screenshots/recorded-totals.webp" width="219" alt="Recorded totals showing shot count, measured grinds, and total coffee ground"></a>
+  <a href="docs/screenshots/recipe-library.webp"><img src="docs/screenshots/recipe-library.webp" width="219" alt="Recipe library tools for importing and exporting recipes"></a>
+  <a href="docs/screenshots/journal-tools.webp"><img src="docs/screenshots/journal-tools.webp" width="219" alt="Journal and app tools menu with backup, import, and export options"></a>
+</p>
+
+<p align="center"><sub>Recorded totals · Recipe import and export · Journal tools</sub></p>
+
+[View the full recipe editor](docs/screenshots/recipe-editor.webp) for dose, yield, brew temperature, pre-infusion, the target time window, and bean bag settings.
 
 ## Machine setup and recovery
 
