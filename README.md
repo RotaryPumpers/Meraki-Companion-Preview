@@ -13,6 +13,8 @@
 
 **Meraki Companion** is an independent Android app for Meraki espresso owners. Follow an extraction as it happens, replay and compare your shots, and keep the recipe and tasting notes together so you can dial in your next cup.
 
+> **Trying this on a stock Meraki?** This developer preview includes the Android source. Live recording requires an existing Secure Link installation. Setup for a stock Meraki is still in owner testing. You can load the bundled recordings to try the journal and replay today.
+
 <p align="center">
   <a href="docs/screenshots/record-offline.webp"><img src="docs/screenshots/record-offline.webp" width="219" alt="Companion Record screen with a saved favourite curve and the current recipe"></a>
   <a href="docs/screenshots/shots-journal.webp"><img src="docs/screenshots/shots-journal.webp" width="219" alt="Companion shot journal with recent shots and recorded usage totals"></a>
@@ -60,7 +62,7 @@ See the [full feature reference](docs/FEATURES.md) for details, optional integra
 ## Quick start
 
 1. Open [`android/`](android/) in Android Studio, sync Gradle, and build the debug variant. The [Android notes](android/README.md#build) include the terminal command.
-2. Open **Recipes** to create your first recipe. If you already have compatible shot or journal JSON, open **Journal & app tools** to import it and try the graphs and replay.
+2. Open **Recipes** to create your first recipe. To try the graphs and replay offline, open **Journal & app tools → Load bundled recordings**. This adds demo shots to the journal. You can also import compatible shot or journal JSON. Manual shot entry is planned.
 3. If your machine already has a compatible Secure Link setup, open **Machine connection** and scan its pairing QR code. Then open **Record** and pull a shot.
 
 The preview is distributed as Android source. Back up your journal before replacing an existing installation. See the [signing and installation notes](android/README.md#build) if you already have Companion on your phone.
@@ -113,7 +115,7 @@ See the [Beanconqueror overview](docs/screenshots/beanconqueror-overview.webp) a
 
 Companion’s optional machine integration adds a background service and makes a reversible startup change. It preserves the original Meraki display executable and MCU firmware.
 
-The Mac Self Service Installer 0.5.0 is a separate owner-test package. Fresh machine setup, the updated repair-removal preview, and cleanup for older test installations remain **TBD** for public distribution. This preview’s live recording was tested using an existing compatible installation.
+The Secure Link service source and the Mac Self Service Installer are outside this public snapshot. We tested live recording with an existing compatible installation, and tested rollback and reactivation on the owner’s machine. A live fresh install from a verified clean starting state is pending. Repair removal for older test installations is a separate task.
 
 ## Troubleshooting
 
