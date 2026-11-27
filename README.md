@@ -13,7 +13,13 @@
 
 **Meraki Companion** is an independent Android app for Meraki espresso owners. Follow an extraction as it happens, replay and compare your shots, and keep the recipe and tasting notes together so you can dial in your next cup.
 
-> **Trying this on a stock Meraki?** This developer preview includes the Android source. Live recording requires an existing Secure Link installation. Setup for a stock Meraki is still in owner testing. You can load the bundled recordings to try the journal and replay today.
+## Beta Test Kit
+
+**[Download the Meraki Companion 0.4.60 Beta Test Kit (ZIP)](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/download/v0.4.60-beta.1/RP-Meraki-Companion-0.4.60-Beta-Test-Kit.zip)** · [Read the prerelease notes and warnings](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/tag/v0.4.60-beta.1)
+
+The kit includes the Android APK and the Mac launcher for installing Secure Link, pairing your phone, rolling back, and removing the machine service. Extract the ZIP and open `START-HERE.md`.
+
+This beta is for the documented US 110 V machine profile with MCU 5.1.4 and a compatible display build. Run **Check compatibility** before installing. Fresh installation and full removal still need live validation with this exact kit. You can try the Android journal and replay offline with bundled recordings.
 
 <p align="center">
   <a href="docs/screenshots/record-offline.webp"><img src="docs/screenshots/record-offline.webp" width="219" alt="Companion Record screen with a saved favourite curve and the current recipe"></a>
@@ -30,6 +36,7 @@
 
 ## Contents
 
+- [Beta Test Kit](#beta-test-kit)
 - [Demo videos](#demo-videos)
 - [Features](#features)
 - [Requirements](#requirements)
@@ -71,7 +78,7 @@ See the [full feature reference](docs/FEATURES.md) for details, optional integra
 2. Open **Recipes** to create your first recipe. To try the graphs and replay offline, open **Journal & app tools → Load bundled recordings**. This adds demo shots to the journal. You can also import compatible shot or journal JSON. Manual shot entry is planned.
 3. If your machine already has a compatible Secure Link setup, open **Machine connection** and scan its pairing QR code. Then open **Record** and pull a shot.
 
-The preview is distributed as Android source. Back up your journal before replacing an existing installation. See the [signing and installation notes](android/README.md#build) if you already have Companion on your phone.
+Back up your journal before replacing an existing installation. See the [signing and installation notes](android/README.md#build) if you already have Companion on your phone.
 
 ## Using Companion
 
@@ -121,7 +128,7 @@ See the [Beanconqueror overview](docs/screenshots/beanconqueror-overview.webp) a
 
 Companion’s optional machine integration adds a background service and makes a reversible startup change. It preserves the original Meraki display executable and MCU firmware.
 
-The Secure Link service source and the Mac Self Service Installer are outside this public snapshot. We tested live recording with an existing compatible installation, and tested rollback and reactivation on the owner’s machine. A live fresh install from a verified clean starting state is pending. Repair removal for older test installations is a separate task.
+The [Beta Test Kit](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/tag/v0.4.60-beta.1) includes the machine setup and removal tools. We tested live recording with an existing compatible installation and tested rollback and reactivation on the owner’s machine. Fresh installation and full removal with the exact beta kit still need live validation. Cleanup of older test installations is outside this beta.
 
 ## Troubleshooting
 
@@ -153,7 +160,7 @@ Companion’s original source is licensed under the [Mozilla Public License 2.0]
 > [!WARNING]
 > **Read this before connecting Companion to an espresso machine.** Companion is experimental community software. It can apply supported recipe settings when connected to a compatible machine service. Keep the machine’s own controls available and check its settings before brewing.
 
-- **Know what this preview includes.** This is an Android source release with build instructions. The shot journal and recipe library can be used offline. Live recording requires an existing compatible Secure Link installation. The Mac machine installer remains an owner-test package. See [Machine setup and recovery](#machine-setup-and-recovery) for the status of fresh setup and cleanup.
+- **Know what this preview includes.** The repository contains the Android source and build instructions. The separate [Beta Test Kit](#beta-test-kit) includes the Android APK and experimental Mac machine installer. The shot journal and recipe library work offline. Live recording requires a compatible Secure Link installation. Read [Machine setup and recovery](#machine-setup-and-recovery) before installing.
 - **Know what changes on the machine.** Companion’s optional machine integration adds a background service and makes a reversible startup change. It preserves the original Meraki display executable and MCU firmware. Applying a recipe can change supported settings on a paired machine. Verify the settings on the machine before using them.
 - **Respect heat, pressure, and electrical hazards.** Follow the manufacturer’s operating and service instructions. Keep the enclosure closed during ordinary setup and use. If a fault requires internal access, stop and contact a qualified technician.
 - **Prepare for data loss or recovery.** Export the journal and recipes you want to keep before changing builds. Keep any machine recovery backup private and available before attempting machine-side changes. Incompatible software, interrupted updates, or storage failure can leave a setup unusable. Recovery and data preservation are not guaranteed.
