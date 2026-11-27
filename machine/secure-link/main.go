@@ -328,7 +328,7 @@ func main() {
 	}
 	host, port, err := net.SplitHostPort(*listen)
 	if err != nil || !allowedIP(net.ParseIP(host)) || port != "9443" {
-		fmt.Fprintln(os.Stderr, "Use a specific private IPv4 address on port9443")
+		fmt.Fprintln(os.Stderr, "Use a specific private IPv4 address on port 9443")
 		os.Exit(2)
 	}
 	info, err := os.Lstat(*config)
