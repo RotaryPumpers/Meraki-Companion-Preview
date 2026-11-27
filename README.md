@@ -23,8 +23,14 @@
 
 <p align="center"><sub>Record · Shot journal · Recipe library</sub></p>
 
+## Demo videos
+
+- [Grind recording](docs/videos/Meraki-Companion-Grind-Demo.mp4) · 19 sec. Watch the live weight climb and the app record the final dose.
+- [Espresso extraction](docs/videos/Meraki-Companion-Extraction-Demo.mp4) · 36 sec. Watch the brew weight and cup-flow curves update, then see the saved shot result.
+
 ## Contents
 
+- [Demo videos](#demo-videos)
 - [Features](#features)
 - [Requirements](#requirements)
 - [Quick start](#quick-start)
