@@ -15,9 +15,9 @@
 
 ## Beta Test Kit
 
-**[Download the Meraki Companion 0.4.60 Beta Test Kit (ZIP)](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/download/v0.4.60-beta.1/RP-Meraki-Companion-0.4.60-Beta-Test-Kit.zip)** · [Read the prerelease notes and warnings](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/tag/v0.4.60-beta.1)
+**Beta 1 download on hold.** A packaged build exposed local build-path metadata. Please discard any copy of the Beta 1 ZIP and wait for a verified replacement before installing.
 
-The kit includes the Android APK and the Mac launcher for installing Secure Link, pairing your phone, rolling back, and removing the machine service. Extract the ZIP and open `START-HERE.md`.
+The kit includes the Android APK and the Mac launcher for installing Secure Link, pairing your phone, rolling back, and removing the machine service. The included `START-HERE.md` covers setup when the corrected download is available.
 
 This beta is for the documented US 110 V machine profile with MCU 5.1.4 and a compatible display build. Run **Check compatibility** before installing. Fresh installation and full removal still need live validation with this exact kit. You can try the Android journal and replay offline with bundled recordings.
 
@@ -128,7 +128,7 @@ See the [Beanconqueror overview](docs/screenshots/beanconqueror-overview.webp) a
 
 Companion’s optional machine integration adds a background service and makes a reversible startup change. It preserves the original Meraki display executable and MCU firmware.
 
-The [Beta Test Kit](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/tag/v0.4.60-beta.1) includes the machine setup and removal tools. We tested live recording with an existing compatible installation and tested rollback and reactivation on the owner’s machine. Fresh installation and full removal with the exact beta kit still need live validation. Cleanup of older test installations is outside this beta.
+The Beta Test Kit includes the machine setup and removal tools. We tested live recording with an existing compatible installation and tested rollback and reactivation on the owner’s machine. Fresh installation and full removal with the exact beta kit still need live validation. Cleanup of older test installations is outside this beta.
 
 ## Troubleshooting
 
