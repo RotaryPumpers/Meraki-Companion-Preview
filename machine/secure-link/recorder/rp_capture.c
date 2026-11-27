@@ -25,7 +25,7 @@ static const char *procroot="/proc";
 static volatile sig_atomic_t stopped=0;
 static int idle_trial=0,stream_mode=0;
 static void stop(int s){(void)s;stopped=1;}
-static void fail(const char *s){fprintf(stderr,"RP_CAPTURE_ERROR: %s\n",s);exit(2);}
+static _Noreturn void fail(const char *s){dprintf(STDERR_FILENO,"RP_CAPTURE_ERROR: %s\n",s);_exit(2);}
 static void path(char *out,size_t n,long pid,const char *leaf){
  if(snprintf(out,n,"%s/%ld/%s",procroot,pid,leaf)>=(int)n)fail("path too long");
 }
@@ -49,8 +49,17 @@ static int mapped(long pid,uint64_t lo,uint64_t n){
 static struct stat exestat(long pid){char p[512];struct stat s;path(p,sizeof p,pid,"exe");if(stat(p,&s))fail("cannot inspect executable");return s;}
 static int sameexe(struct stat a,struct stat b){return a.st_dev==b.st_dev&&a.st_ino==b.st_ino&&a.st_size==b.st_size&&a.st_mtim.tv_sec==b.st_mtim.tv_sec&&a.st_mtim.tv_nsec==b.st_mtim.tv_nsec&&a.st_ctim.tv_sec==b.st_ctim.tv_sec&&a.st_ctim.tv_nsec==b.st_ctim.tv_nsec;}
 static void verify_hash(long pid){
+ char executable[512];
+ path(executable,sizeof executable,pid,"exe");
  int pipes[2];if(pipe(pipes))fail("hash pipe failed");pid_t child=fork();if(child<0)fail("hash fork failed");
- if(child==0){char p[512];path(p,sizeof p,pid,"exe");close(pipes[0]);if(dup2(pipes[1],1)<0)_exit(127);close(pipes[1]);execlp("sha256sum","sha256sum",p,(char*)NULL);_exit(127);}
+ if(child==0){
+  close(pipes[0]);
+  if(dup2(pipes[1],STDOUT_FILENO)<0)_exit(127);
+  if(pipes[1]!=STDOUT_FILENO)close(pipes[1]);
+  execl("/usr/bin/sha256sum","sha256sum",executable,(char*)NULL);
+  if(errno==ENOENT)execl("/bin/sha256sum","sha256sum",executable,(char*)NULL);
+  _exit(127);
+ }
  close(pipes[1]);char out[1024];size_t used=0;ssize_t n;while((n=read(pipes[0],out+used,sizeof out-1-used))>0){used+=(size_t)n;if(used==sizeof out-1)break;}close(pipes[0]);out[used]=0;
  int status;if(stopped)kill(child,SIGTERM);while(waitpid(child,&status,0)<0){if(errno!=EINTR)fail("hash wait failed");if(stopped)kill(child,SIGTERM);}
  if(!WIFEXITED(status)||WEXITSTATUS(status)||used<65||strncmp(out,SOURCE_SHA,64)||out[64]!=' ')fail("unsupported display executable SHA256");
