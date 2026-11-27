@@ -22,6 +22,11 @@ public final class GrindWorkflow {
   }
   previous=s;return completed;
  }
+ /** The live estimate uses the same start midpoint as the saved grind duration. */
+ public double elapsed(){
+  if(active!=null)return previous.uptime-(active.startLo+active.startHi)/2;
+  return pending==null?Double.NaN:pending.duration();
+ }
  public Result peek(double brewTime){Result r=pending;return r!=null&&brewTime>=r.stopHi&&brewTime-r.stopHi<=300?r:null;}
  public Result consume(double brewTime){Result r=pending;pending=null;tail.clear();return r!=null&&brewTime>=r.stopHi&&brewTime-r.stopHi<=300?r:null;}
 }

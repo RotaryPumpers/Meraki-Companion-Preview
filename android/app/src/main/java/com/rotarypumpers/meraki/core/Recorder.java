@@ -18,6 +18,7 @@ public final class Recorder {
     private Sample pendingStart;private double pendingLo;private int preTareSamples;
     public static final double AUTO_TARE_LIMIT_S=1.5;
     public double startTime(){return shot==null?Double.NaN:(shot.startLo+shot.startHi)/2;}
+    public double grindElapsed(){return workflow.elapsed();}
     private void skipStart(String reason){pendingStart=null;preTareSamples=0;state=State.WAITING;idleCount=0;listener.startSkipped(reason);}
     private void begin(Sample first,Sample start,double lo,int omitted){shot=new Shot();shot.observedStart=start;shot.autoTareWait=first.uptime-start.uptime;shot.preTareSamples=omitted;shot.gapLimit=gapLimit;shot.grind=workflow.peek(start.uptime);shot.startLo=lo;shot.startHi=start.uptime;shot.samples.add(first);tarePending=first.weight< -1;pendingStart=null;preTareSamples=0;state=State.RECORDING;}
     public State state=State.WAITING;
