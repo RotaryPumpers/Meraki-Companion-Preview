@@ -15,9 +15,9 @@
 
 ## Beta Test Kit
 
-**[Download the Meraki Companion 0.4.60 Beta 3 Test Kit (ZIP)](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/download/v0.4.60-beta.3/RP-Meraki-Companion-0.4.60-Beta.3-Test-Kit.zip)** · [Prerelease notes and warnings](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/tag/v0.4.60-beta.3)
+**[Download the Meraki Companion 0.4.60 Beta 4 Test Kit (ZIP)](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/download/v0.4.60-beta.4/RP-Meraki-Companion-0.4.60-Beta.4-Test-Kit.zip)** · [Prerelease notes and warnings](https://github.com/RotaryPumpers/Meraki-Companion-Preview/releases/tag/v0.4.60-beta.4)
 
-Beta 3 includes the rebuilt Android APK and the machine payload from Beta 2. Discard downloaded copies of the withdrawn Beta 1 ZIP.
+Beta 4 includes the signed Android APK (version code 87) and a rebuilt Secure Link service with connection limits, log rotation, and stricter checks before changing machine startup. Discard downloaded copies of the withdrawn Beta 1 ZIP.
 
 The kit includes the Android APK and the Mac launcher for installing Secure Link, pairing your phone, rolling back, and removing the machine service. Extract the ZIP and open `START-HERE.md`.
 
